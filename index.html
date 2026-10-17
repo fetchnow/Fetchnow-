@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FetchNow – Forgot something? We’ll deliver it.</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛵</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--y:#FFC107;--y2:#FFF4CC;--ink:#0F172A;--bg:#fff;--bg2:#FFFBEA;--card:#fff;--mut:#5b6475;--line:#eceef3;--foot:#0F172A}
+@media (prefers-color-scheme:dark){:root{--ink:#F5F6F8;--bg:#10131a;--bg2:#171b24;--card:#1b2030;--mut:#a3abbb;--line:#2a3042;--y2:#2b2610;--foot:#0a0c11}}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:Poppins,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+a{color:inherit;text-decoration:none}
+.w{max-width:1120px;margin:0 auto;padding:0 20px}
+nav{position:sticky;top:0;z-index:9;background:var(--bg);border-bottom:1px solid var(--line)}
+nav .w{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.logo{font-weight:800;font-size:1.4rem}.logo b{color:var(--y)}
+.links{display:flex;gap:24px;font-size:.92rem;font-weight:500}
+.links a:hover{color:var(--y)}
+.btn{display:inline-block;padding:12px 22px;border-radius:10px;font-weight:600;border:1.5px solid var(--ink);font-size:.95rem;cursor:pointer;background:none;color:var(--ink);font-family:inherit}
+.btn.p{background:var(--y);border-color:var(--y);color:#111}
+.hero{background:linear-gradient(180deg,var(--bg2),var(--bg));padding:56px 0 40px}
+.hero .w{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center}
+.tag{display:inline-block;background:var(--y2);padding:6px 14px;border-radius:99px;font-size:.8rem;font-weight:600}
+h1{font-size:clamp(2.2rem,5vw,3.5rem);line-height:1.1;font-weight:800;margin:16px 0}
+h1 span{color:var(--y)}
+.hero p{color:var(--mut);max-width:440px;margin-bottom:24px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.trust{margin-top:22px;font-size:.85rem;color:var(--mut)}
+.art{background:var(--y);border-radius:28px;min-height:340px;display:grid;place-items:center;font-size:9rem;position:relative}
+.art small{position:absolute;bottom:18px;left:18px;right:18px;background:var(--card);color:var(--ink);border-radius:14px;padding:12px 16px;font-size:.85rem;font-weight:600;text-align:left}
+.book{background:#0F172A;border-radius:20px;padding:24px;margin-top:-10px;display:grid;grid-template-columns:1fr 1fr 1fr 1fr auto;gap:12px;align-items:end}
+.book h3{grid-column:1/-1;color:var(--y);font-size:1.3rem}
+.book label{font-size:.75rem;color:#c8cfdd;display:block}
+.book input{width:100%;padding:12px;border-radius:10px;border:0;margin-top:4px;font-family:inherit;font-size:.9rem}
+section{padding:60px 0}
+h2{text-align:center;font-size:1.9rem;font-weight:700;margin-bottom:36px}
+.g{display:grid;gap:18px}
+.g4{grid-template-columns:repeat(4,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g6{grid-template-columns:repeat(6,1fr)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;text-align:center}
+.card .i{font-size:2.2rem;display:block;margin-bottom:8px}
+.card h4{font-size:1rem;margin-bottom:4px}.card p{font-size:.85rem;color:var(--mut)}
+.n{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--y);color:#111;font-weight:700;font-size:.85rem;margin-bottom:8px}
+.band{background:var(--bg2)}
+.price{max-width:420px;margin:auto;text-align:left}
+.price div{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed var(--line);font-size:.95rem}
+.price .t{font-weight:700;font-size:1.2rem;border:0;color:var(--ink)}
+.app{background:var(--y);color:#111;border-radius:24px;padding:40px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.app h2{text-align:left;margin:0 0 6px}
+.st{display:inline-block;background:#000;color:#fff;border-radius:10px;padding:10px 18px;font-size:.85rem;margin:12px 10px 0 0}
+form.pf{max-width:480px;margin:auto;display:grid;gap:12px}
+form.pf input,form.pf select{padding:13px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);font-family:inherit}
+#msg{text-align:center;font-weight:600;color:#16a34a;min-height:1.5em}
+footer{background:var(--foot);color:#cbd2e0;padding:44px 0 24px;font-size:.88rem}
+footer .g{grid-template-columns:2fr 1fr 1fr 1.5fr}
+footer h5{color:#fff;margin-bottom:10px;font-size:.95rem}
+footer a{display:block;margin:6px 0}
+.cp{border-top:1px solid #263047;margin-top:28px;padding-top:16px;text-align:center}
+@media(max-width:820px){.links{display:none}.hero .w{grid-template-columns:1fr}.art{min-height:240px;font-size:6rem}.book{grid-template-columns:1fr}.g4,.g3{grid-template-columns:1fr 1fr}.g6{grid-template-columns:1fr 1fr 1fr}footer .g{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.g4,.g3{grid-template-columns:1fr}.g6{grid-template-columns:1fr 1fr}.nb{display:none}}
+</style>
+</head>
+<body>
+<nav><div class="w">
+<a class="logo" href="#">🛵 Fetch<b>Now</b></a>
+<div class="links"><a href="#how">How It Works</a><a href="#items">Services</a><a href="#pricing">Pricing</a><a href="#partner">Become a Partner</a><a href="#contact">Contact</a><a data-ig target="_blank" rel="noopener" href="#">Instagram</a></div>
+<div class="nb"><a class="btn" href="#request">Log In</a> <a class="btn p" href="#request">Sign Up</a></div>
+</div></nav>
+
+<header class="hero"><div class="w">
+<div>
+<span class="tag">⚡ Fast, reliable, safe</span>
+<h1>Forgot something? We’ll <span>deliver</span> it.</h1>
+<p>Keys, chargers, documents, medicines. We pick it up from your home and deliver it to you, anywhere in the city.</p>
+<div class="cta"><a class="btn p" href="#request">Request a Delivery</a><a class="btn" href="#partner">Become a Partner</a></div>
+<p class="trust">Trusted by 10,000+ customers across the city</p>
+</div>
+<div class="art">🛵<small>📍 Live tracking · Rohit Kumar is 12 min away</small></div>
+</div></header>
+
+<div class="w"><div class="book" id="request-bar">
+<h3>Book a delivery</h3>
+<div><label>Pickup location</label><input placeholder="Enter pickup location"></div>
+<div><label>Drop location</label><input placeholder="Enter drop location"></div>
+<div><label>What do you need?</label><input placeholder="Describe the item"></div>
+<div></div>
+<a class="btn p" href="#request">Get estimate</a>
+</div></div>
+
+<section id="how"><div class="w">
+<h2>How it works</h2>
+<div class="g g4">
+<div class="card"><span class="n">1</span><span class="i">📍</span><h4>Enter locations</h4><p>Add your pickup and drop address.</p></div>
+<div class="card"><span class="n">2</span><span class="i">📦</span><h4>Describe the item</h4><p>Tell us what needs to be picked up.</p></div>
+<div class="card"><span class="n">3</span><span class="i">🛵</span><h4>We pick it up</h4><p>A delivery partner collects it from your home.</p></div>
+<div class="card"><span class="n">4</span><span class="i">✅</span><h4>We deliver it</h4><p>It reaches you safely and on time.</p></div>
+</div></div></section>
+
+<section class="band"><div class="w"><div class="g g4">
+<div class="card"><span class="i">🛡️</span><h4>Safe and secure</h4><p>Every delivery partner is verified.</p></div>
+<div class="card"><span class="i">⚡</span><h4>Super fast</h4><p>Quick pickups and on-time delivery.</p></div>
+<div class="card"><span class="i">₹</span><h4>Affordable pricing</h4><p>Clear fares with no hidden charges.</p></div>
+<div class="card"><span class="i">🎧</span><h4>24/7 support</h4><p>Our team is always here to help.</p></div>
+</div></div></section>
+
+<section id="items"><div class="w">
+<h2>What can we deliver?</h2>
+<div class="g g6">
+<div class="card"><span class="i">🔑</span><h4>Keys and wallets</h4></div>
+<div class="card"><span class="i">🔌</span><h4>Chargers</h4></div>
+<div class="card"><span class="i">💻</span><h4>Electronics</h4></div>
+<div class="card"><span class="i">📄</span><h4>Documents</h4></div>
+<div class="card"><span class="i">💊</span><h4>Medicines</h4></div>
+<div class="card"><span class="i">👟</span><h4>Clothes and shoes</h4></div>
+</div></div></section>
+
+<section id="pricing" class="band"><div class="w">
+<h2>Simple pricing</h2>
+<div class="card price">
+<div><span>Base fare</span><span>₹30</span></div>
+<div><span>Distance (8.2 km)</span><span>₹82</span></div>
+<div><span>Time (20 mins)</span><span>₹20</span></div>
+<div><span>Convenience fee</span><span>₹10</span></div>
+<div class="t"><span>Total</span><span>₹142</span></div>
+<p style="margin-top:10px;font-size:.8rem">Final fare may vary slightly with distance and time.</p>
+</div></div></section>
+
+<section id="request"><div class="w">
+<h2>Request a delivery</h2>
+<form class="pf" id="of" onsubmit="return false">
+<input id="nm" required placeholder="Your name">
+<input id="ph" required type="tel" inputmode="numeric" maxlength="10" placeholder="10-digit mobile number">
+<input id="pk" required placeholder="Pickup address">
+<button type="button" class="btn" id="loc">📍 Use my live location for pickup</button>
+<div id="lc" style="font-size:.85rem;color:var(--mut)"></div>
+<input id="dr" required placeholder="Drop address">
+<select id="it"><option>Keys and wallets</option><option>Charger</option><option>Documents</option><option>Medicines</option><option>Other</option></select>
+<select id="pm"><option value="upi">Pay by UPI</option><option value="cod">Cash on delivery</option></select>
+<button class="btn p" type="button" id="so">Send OTP</button>
+<div id="ob" style="display:none;gap:12px;grid-template-columns:1fr"><input id="otp" inputmode="numeric" maxlength="6" placeholder="Enter 6-digit OTP"><button class="btn p" type="button" id="vo">Verify and place order</button></div>
+<div id="msg"></div>
+<div id="pay" class="card" style="display:none;gap:10px;grid-template-columns:1fr">
+<b>Pay ₹<span id="amt"></span> via UPI</b>
+<a id="upl" class="btn p">Pay with UPI app</a>
+<div id="qr" style="margin:auto;background:#fff;padding:10px;border-radius:12px"></div>
+<div style="font-size:.85rem">UPI ID: <b id="vpa"></b> <button type="button" class="btn" id="cpy" style="padding:4px 10px;font-size:.8rem">Copy</button></div>
+<input id="utr" inputmode="numeric" maxlength="12" placeholder="12-digit UTR / transaction ID">
+<button class="btn p" type="button" id="pd">I have paid</button>
+</div>
+</form>
+<div class="w" style="max-width:480px;margin-top:28px"><h3 id="oh" style="display:none;margin-bottom:10px">Your orders</h3><div id="orders" class="g"></div></div>
+</div></section>
+
+<section id="partner"><div class="w"><div class="app">
+<div>
+<h2>Download the FetchNow app</h2>
+<p>Faster booking, live tracking and exclusive offers. Want to earn? Join us as a delivery partner.</p>
+<span class="st">▶ Google Play</span><span class="st"> App Store</span>
+</div>
+<div style="font-size:6rem">📱</div>
+</div></div></section>
+
+<footer id="contact"><div class="w">
+<div class="g">
+<div><div class="logo" style="color:#fff">🛵 Fetch<b>Now</b></div><p style="margin-top:8px">On-demand delivery partner for forgotten essentials and urgent items.</p></div>
+<div><h5>Company</h5><a href="#how">How It Works</a><a href="#pricing">Pricing</a><a href="#contact">Contact Us</a></div>
+<div><h5>Partners</h5><a href="#partner">Become a Partner</a><a href="#partner">Partner Login</a></div>
+<div><h5>Contact</h5><a href="tel:+919876543210">+91 98765 43210</a><a href="mailto:support@fetchnow.com">support@fetchnow.com</a><a data-ig target="_blank" rel="noopener" href="#">📸 Instagram</a><a href="#">Pune, Maharashtra, India</a></div>
+</div>
+<div class="cp">© 2026 FetchNow. All rights reserved.</div>
+</div></footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+// ===== SETTINGS: apni details yahan badlo =====
+const INSTAGRAM="your_instagram_username";
+const OWNER_WHATSAPP="919876543210"; // country code ke saath, + ke bina
+const UPI_ID="yourname@upi"; // apna UPI ID
+const UPI_NAME="FetchNow";
+const FARE=142; // delivery fare (Rs)
+// ==============================================
+const $=id=>document.getElementById(id);
+document.querySelectorAll("[data-ig]").forEach(a=>a.href="https://instagram.com/"+INSTAGRAM);
+let pos=null,code=null,tries=0;
+const say=(t,ok=true)=>{$("msg").style.color=ok?"#16a34a":"#dc2626";$("msg").textContent=t};
+const load=()=>{try{return JSON.parse(localStorage.getItem("fn_orders")||"[]")}catch(e){return[]}};
+const save=o=>{try{localStorage.setItem("fn_orders",JSON.stringify(o))}catch(e){}};
+$("loc").onclick=()=>{
+ if(!navigator.geolocation){$("lc").textContent="Your browser does not support location.";return}
+ $("lc").textContent="Getting your location…";
+ navigator.geolocation.getCurrentPosition(p=>{
+  pos={lat:p.coords.latitude.toFixed(6),lng:p.coords.longitude.toFixed(6)};
+  const u="https://maps.google.com/?q="+pos.lat+","+pos.lng;
+  $("lc").innerHTML="✅ Location captured: <a href=\""+u+"\" target=\"_blank\" rel=\"noopener\" style=\"text-decoration:underline\">view on map</a>";
+  if(!$("pk").value)$("pk").value="Live location ("+pos.lat+", "+pos.lng+")";
+ },()=>{$("lc").textContent="Location permission denied. Please allow location or type your address."},{enableHighAccuracy:true,timeout:15000});
+};
+$("so").onclick=()=>{
+ if(!$("nm").value.trim()||!$("pk").value.trim()||!$("dr").value.trim())return say("Please fill your name, pickup and drop address.",false);
+ if(!/^[6-9]\d{9}$/.test($("ph").value))return say("Enter a valid 10-digit mobile number.",false);
+ code=String(Math.floor(100000+Math.random()*900000));tries=0;
+ $("ob").style.display="grid";
+ // DEMO: real SMS ke liye backend chahiye (Firebase/Twilio/MSG91). Abhi OTP screen par dikhta hai.
+ say("Demo OTP: "+code+" (real SMS ke liye SMS service jodni hogi)");
+};
+let cur=null;
+function sendWA(r){
+ const t="New FetchNow order "+r.id+"\nName: "+r.name+"\nPhone: "+r.phone+"\nItem: "+r.item+"\nPickup: "+r.pickup+(r.loc?"\nMap: https://maps.google.com/?q="+r.loc.lat+","+r.loc.lng:"")+"\nDrop: "+r.drop+"\nPayment: "+r.pay+(r.utr?" (UTR "+r.utr+")":"")+" Rs "+FARE;
+ window.open("https://wa.me/"+OWNER_WHATSAPP+"?text="+encodeURIComponent(t),"_blank");
+}
+function upd(r){const o=load().map(x=>x.id===r.id?r:x);save(o);render()}
+$("vo").onclick=()=>{
+ if(!code)return say("Click Send OTP first.",false);
+ if($("otp").value!==code){tries++;if(tries>=3){code=null;$("ob").style.display="none";return say("Too many wrong attempts. Please request a new OTP.",false)}return say("Wrong OTP. Try again.",false)}
+ const upi=$("pm").value==="upi";
+ const ord={id:"FN"+Date.now().toString().slice(-6),name:$("nm").value.trim(),phone:$("ph").value,pickup:$("pk").value.trim(),drop:$("dr").value.trim(),item:$("it").value,loc:pos,pay:upi?"UPI":"Cash on delivery",status:upi?"Payment pending":"Order placed",time:new Date().toLocaleString()};
+ const o=load();o.unshift(ord);save(o);code=null;$("otp").value="";$("ob").style.display="none";render();cur=ord;
+ if(!upi){say("Order "+ord.id+" placed! Pay cash on delivery. ✅");return sendWA(ord)}
+ const link="upi://pay?pa="+encodeURIComponent(UPI_ID)+"&pn="+encodeURIComponent(UPI_NAME)+"&am="+FARE+"&cu=INR&tn="+encodeURIComponent("FetchNow "+ord.id);
+ $("amt").textContent=FARE;$("vpa").textContent=UPI_ID;$("upl").href=link;
+ $("qr").innerHTML="";if(window.QRCode)new QRCode($("qr"),{text:link,width:180,height:180});
+ $("pay").style.display="grid";say("Order "+ord.id+" created. Please complete the UPI payment.");
+};
+$("cpy").onclick=()=>{try{navigator.clipboard.writeText(UPI_ID);$("cpy").textContent="Copied"}catch(e){}};
+$("pd").onclick=()=>{
+ if(!cur)return;
+ if(!/^\d{12}$/.test($("utr").value))return say("Enter the 12-digit UTR from your UPI app.",false);
+ cur.utr=$("utr").value;cur.status="Paid, verifying";upd(cur);
+ $("pay").style.display="none";$("utr").value="";say("Thanks! Payment submitted for "+cur.id+". We’ll confirm it shortly. ✅");
+ sendWA(cur);cur=null;
+};
+function render(){
+ const o=load();$("oh").style.display=o.length?"block":"none";
+ $("orders").innerHTML="";
+ o.forEach(r=>{const d=document.createElement("div");d.className="card";d.style.textAlign="left";
+  const b=document.createElement("b");b.textContent=r.id+" · "+r.status;d.appendChild(b);
+  const p=document.createElement("p");p.textContent=r.item+" | "+r.pay+" | "+r.pickup+" → "+r.drop+" | "+r.time;d.appendChild(p);
+  if(r.loc){const a=document.createElement("a");a.href="https://maps.google.com/?q="+r.loc.lat+","+r.loc.lng;a.target="_blank";a.rel="noopener";a.textContent="📍 Pickup location";a.style.textDecoration="underline";a.style.fontSize=".85rem";d.appendChild(a)}
+  $("orders").appendChild(d)});
+}
+render();
+</script>
+</body>
+</html>
